@@ -30,7 +30,7 @@ else:
 
 
 """
-Write a program to calculate a customer's total bill based on: 
+Question 3: Write a program to calculate a customer's total bill based on: 
 - Quantity
 - Price
 - Print the result using f-string.
@@ -51,7 +51,7 @@ print(f'The customer total bill is {total_bill}')
 
 
 """
-Prompt the user to enter their score and:
+Question 4: Prompt the user to enter their score and:
 print grade A (90-100), B (80-89), C (70-79), F (below 70)
 """
 
@@ -74,3 +74,23 @@ elif Score >= 70 and Score <= 79:
 
 else:
     print(f'Grade F')
+
+
+"""
+Question 5: Write a Python program that calculates the area of a circle based on the radius entered by the user.
+Sample Output :
+r = 1.1
+Area = 3.8013271108436504
+"""
+
+#Solution:
+"""
+Thought Process: The area of a circle is pi r square (r^2)
+- Create a variable to accept the radius inputted by the user
+- Let pie be 3.142
+"""
+pie = 3.142
+radius = float(input("Enter the radius: "))
+area = ((pie) * (radius * radius))
+
+print(f'The area of a circle is {area}')
