@@ -94,3 +94,20 @@ radius = float(input("Enter the radius: "))
 area = ((pie) * (radius * radius))
 
 print(f'The area of a circle is {area}')
+
+
+"""
+Question 6: Write a Python program that computes the greatest common divisor (GCD) of
+two positive integers.
+"""
+
+#Solution:
+"""
+Thought Process: 
+i. Create a variable to accept users input of two numbers
+ii. Divide the numbers
+iii. The first input should be greater than the second input
+"""
+
+first_number = input(input("Enter the first number: "))
+second_number = input(input("Enter the second number: "))
