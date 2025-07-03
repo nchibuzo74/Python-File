@@ -110,6 +110,6 @@ iii. The first input should be greater than the second input
 """
 
 first_number = input(input("Enter the first number: "))
-second_number = input(input("Enter the second number: "))vhd
+second_number = input(input("Enter the second number: "))
 
-print(first_number)
+print(second_number)
