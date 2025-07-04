@@ -128,3 +128,54 @@ while second_number != 0:
     
     #When second number is 0, first number contain the greater common divisor 
     print(f'The GCD is {first_number}')
+
+
+"""
+Question 7: Write a Python program to find the least common multiple (LCM) of two positive 
+integers. enter by the user from the terminal.
+"""
+
+#Solution:
+"""
+Thought Process:
+- Create a variable taking user input
+- Create a variable to find the greater number between two numbers
+- Check multiples if greater number is divisible by both numbers.
+"""
+# Take input from the user
+number1 = int(input("Enter first number: "))
+number2 = int(input("Enter second number: "))
+
+# Find the greater number
+greater_number = max(number1, number2)
+
+# Keep checking multiples of the greater number until divisible by both
+while True:
+    if greater_number % number1 == 0 and greater_number % number2 == 0:
+        lcm = greater_number
+        break
+    greater_number += 1
+
+print(f"The LCM of {number1} and {number2} is {lcm}")
+
+
+"""
+Question 8: Write a Python program to compute the future value of a specified principal 
+amount, rate of interest, and number of years. (calculate simple interest based on 
+user input)
+"""
+
+#Solution:
+"""
+Thought Process: 
+- The formula for simple interest is (P * R * T) / 100
+- Create a variable accepting user input - principal, rate and time
+- Create a varaible to compute the calculation
+"""
+Principal = int(input("Enter the Principal amount: "))
+Rate = int(input("Enter the Rate (%): "))
+Time = int(input("Enter the Time (in years): "))
+
+SI = (Principal * Rate * Time) / 100
+
+print(f'The Simple Interest is {SI}')
