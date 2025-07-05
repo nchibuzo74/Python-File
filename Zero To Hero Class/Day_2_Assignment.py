@@ -198,7 +198,7 @@ print(type(enter_value)) #This will show the datatype of the variable.
 
 #Solution:
 """
-Thought Process:
+Thought Process: The formula for converting feet and inches to centimeters is: (feet * 30.48) + (inches * 2.54)
 - Create a variable to accept user input for feet and inches
 - Convert feet to centimeters (1 foot = 30.48 cm)
 - Convert inches to centimeters (1 inch = 2.54 cm)
@@ -215,4 +215,18 @@ one_inch_to_cm = 2.54
 #Mechanism to compute the total height in centimeters
 height = ((feet_value * one_foot_to_cm) + (inches_value * one_inch_to_cm))
 
-print(f'The convertion of height (in feet and inches) to centimeters is {height}')
+print(f'The convertion of height (in feet and inches) to centimeters is {height} cm')
+
+
+#Question 11:  Write a Python program to calculate the hypotenuse of a right angled triangle.
+
+#Solution:
+#Thought Process: The formula for calculating the hypotenuse is: c = sqrt(a^2 + b^2)
+# - Create a variable to accept user input for the two sides of the triangle
+
+first_number = int(input("Enter the first side of the triangle: "))
+second_number = int(input("Enter the second side of the triangle: "))
+
+hypotenuse = (((first_number ** 2) + (second_number ** 2)) ** 0.5)
+
+print(f'The hypotenuse of the right angled triangle is {hypotenuse}')
