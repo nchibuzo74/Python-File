@@ -279,20 +279,7 @@ An isosceles triangle is a triangle with (at least) two equal sides.
 #Solution:
 #Thought Process: Create a variable to accept user input for the three sides of the triangle
 # Create a mechanism to check the type of triangle based on the sides
-"""
-first_side = int(input("Enter the first side of the triangle: "))
-second_side = int(input("Enter the second side of the triangle: "))
-third_side = int(input("Enter the third side of the triangle: "))
 
-if first_side + second_side <= third_side or first_side + third_side <= second_side or second_side + third_side <= first_side:
-    print ("Not a valid triangle!")
-    elif (first_side == second_side and first_side == third_side) or (second_side == first_side and second_side == third_side):
-    Print("Equilateral")
-    elif first_side == second_side or second_side == third_side or first_side == third_side:
-        print("Isosceles")
-    else:
-        print("Scalene")
-"""
 def triangle_type(a, b, c):
     # Check if it's a valid triangle
     if a + b <= c or a + c <= b or b + c <= a:
@@ -314,3 +301,36 @@ c = float(input("Enter side 3: "))
 # Get and print the result
 result = triangle_type(a, b, c)
 print(f"The triangle is: {result}")
+
+
+"""
+Question 14: Write a Python program that reads two integers representing a month and 
+day and prints the season for that month and day. 
+Expected Output: 
+Input the month (e.g. January, February etc.): july                      
+Input the day: 31                                                        
+Season is harmattan
+"""
+
+#Solution:
+#Thought Process: 
+# Create a function to determine the season based on the month and day
+# Create a variable to accept user input for the month and day
+# Create a mechanism to check the season based on the month and day
+
+def get_season(month, day):
+    if month in ["April", "May", "June", "July", "August", "September"]:
+        return "Rainy Season"
+    elif month in ["November", "December", "January", "February", "March"]:
+        return "Harmattan (Dry Season)"
+    elif month == "October":
+        return "Transition (End of Rainy Season)"
+    else:
+        return "Invalid month"
+
+# Input month and day
+month = input("Input the month (e.g. January, February etc.): ").strip()
+day = int(input("Input the day: "))
+# Get and print the season
+season = get_season(month, day)
+print(f"Season is {season}")
