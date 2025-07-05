@@ -192,3 +192,27 @@ enter_value = float(input("Enter a number: "))
 
 print(enter_value) #This will automatically convert the input to float if it contains a decimal point.
 print(type(enter_value)) #This will show the datatype of the variable.
+
+
+#Question 10: Write a Python program to convert height (in feet and inches) to centimeters.
+
+#Solution:
+"""
+Thought Process:
+- Create a variable to accept user input for feet and inches
+- Convert feet to centimeters (1 foot = 30.48 cm)
+- Convert inches to centimeters (1 inch = 2.54 cm)
+- Create a mechanism to compute the total height in centimeters
+"""
+
+feet_value = float(input("Enter your height in feet: "))
+inches_value = float(input("Enter your height in inches: "))
+
+# Conversion factors
+one_foot_to_cm = 30.48
+one_inch_to_cm = 2.54
+
+#Mechanism to compute the total height in centimeters
+height = ((feet_value * one_foot_to_cm) + (inches_value * one_inch_to_cm))
+
+print(f'The convertion of height (in feet and inches) to centimeters is {height}')
