@@ -268,3 +268,49 @@ else:
     print("Password is invalid!")
 
 
+"""
+Question 13: Write a Python program to check if a triangle is equilateral, isosceles or scalene.  
+Note : 
+An equilateral triangle is a triangle in which all three sides are equal. 
+A scalene triangle is a triangle that has three unequal sides. 
+An isosceles triangle is a triangle with (at least) two equal sides.
+"""
+
+#Solution:
+#Thought Process: Create a variable to accept user input for the three sides of the triangle
+# Create a mechanism to check the type of triangle based on the sides
+"""
+first_side = int(input("Enter the first side of the triangle: "))
+second_side = int(input("Enter the second side of the triangle: "))
+third_side = int(input("Enter the third side of the triangle: "))
+
+if first_side + second_side <= third_side or first_side + third_side <= second_side or second_side + third_side <= first_side:
+    print ("Not a valid triangle!")
+    elif (first_side == second_side and first_side == third_side) or (second_side == first_side and second_side == third_side):
+    Print("Equilateral")
+    elif first_side == second_side or second_side == third_side or first_side == third_side:
+        print("Isosceles")
+    else:
+        print("Scalene")
+"""
+def triangle_type(a, b, c):
+    # Check if it's a valid triangle
+    if a + b <= c or a + c <= b or b + c <= a:
+        return "Not a valid triangle!"
+    
+    # Check the type
+    if a == b == c:
+        return "Equilateral"
+    elif a == b or b == c or a == c:
+        return "Isosceles"
+    else:
+        return "Scalene"
+
+# Input sides
+a = float(input("Enter side 1: "))
+b = float(input("Enter side 2: "))
+c = float(input("Enter side 3: "))
+
+# Get and print the result
+result = triangle_type(a, b, c)
+print(f"The triangle is: {result}")
