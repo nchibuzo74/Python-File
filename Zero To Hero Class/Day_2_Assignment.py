@@ -418,7 +418,7 @@ def validate_credentials(username, password):
     if len(password) < 8:
         return False
     
-    # Check for at least one lowercase, uppercase, digit, and special character in password
+    # Character checks
     has_lower = any(char.islower() for char in password)
     has_upper = any(char.isupper() for char in password)
     has_digit = any(char.isdigit() for char in password)
@@ -426,10 +426,12 @@ def validate_credentials(username, password):
     
     return has_lower and has_upper and has_digit and has_special
 
-username = input("Enter username: ")
-password = input("Enter password: ")
+# Input and execution (properly indented). Meaning Proper top-level indentation for the execution block
+if __name__ == "__main__":
+    username = input("Enter username: ")
+    password = input("Enter password: ")
     
-if validate_credentials(username, password):
-    print(f'Username and Password are valid!')
-else:
-    print(f'Username and Password are invalid!')
+    if validate_credentials(username, password):
+        print("Credentials are valid!")
+    else:
+        print("Credentials are invalid!")
