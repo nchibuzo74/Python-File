@@ -334,3 +334,61 @@ day = int(input("Input the day: "))
 
 season = get_season(month, day)
 print(f'Season is {season}')
+
+
+"""
+Question 15: Write a program that asks for the user's name and their favorite color. Then, 
+use string interpolation to create a personalized greeting,
+"""
+
+#Solution:
+#Thought Process:
+# Create a variable to accept user input for the name and favorite color
+# Use f-string to create a personalized greeting
+name = input("Enter your name: ")
+favourite_color = input("Enter your favourite color: ")
+print(f'Hello {name}, your favourite color is {favourite_color}!')
+
+
+"""
+Question 16: A shop offers a 10% discount if the total bill is over $100. Write a program 
+that asks for the total bill amount and prints the final amount to be paid after the 
+discount, if applicable.
+"""
+
+#Solution:
+#Thought Process:
+#1. Create a variable to accept user input
+#2. create a mechanism to check if the total bill exceed 100
+#3. If exceed 100, multiply the discount by total bill, else total bill
+
+enter_amount = int(input("enter total bill amount: "))
+discount = 0.1
+
+if enter_amount > 100:
+    final_amount = enter_amount - (discount * enter_amount)
+
+    print(f'The total bill amount is {final_amount:.2f}')
+
+else:
+    print(f'The total bill amount is {enter_amount:.2f}')
+
+
+#Question 17:  Write a program that takes three numbers as input and prints the largest one using if-elif-else. 
+
+#Solution:
+#Thought Process: 
+# Create a variable to accept user input for the three numbers
+# Create a mechanism to check the largest number
+
+number_1 = int(input("Enter the first number: "))
+number_2 = int(input("Enter the second number: "))
+number_3 = int(input("Enter the third number: "))
+
+maximum_number = max(number_1,number_2,number_3)
+
+if maximum_number > 0:
+    print(f'The largest number is {maximum_number}')
+
+else:
+    print(f'There is no largest number')
