@@ -320,17 +320,17 @@ Season is harmattan
 
 def get_season(month, day):
     if month in ["April", "May", "June", "July", "August", "September"]:
-        return "Rainy Season"
+        return 'Rainy Season'
     elif month in ["November", "December", "January", "February", "March"]:
-        return "Harmattan (Dry Season)"
+        return 'Harmattan (Dry Season)'
     elif month == "October":
-        return "Transition (End of Rainy Season)"
+        return 'Transition (End of Rainy Season)'
     else:
-        return "Invalid month"
+        return 'Invalid month'
 
-# Input month and day
-month = input("Input the month (e.g. January, February etc.): ").strip()
+# Input and execution (outside the function!)
+month = input("Input the month (e.g. January, February etc.): ").strip().title()  # .title() for consistency
 day = int(input("Input the day: "))
-# Get and print the season
+
 season = get_season(month, day)
-print(f"Season is {season}")
+print(f'Season is {season}')
