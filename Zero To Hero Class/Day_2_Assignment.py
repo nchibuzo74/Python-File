@@ -468,3 +468,31 @@ elif enter_your_age >= 18 and is_weekend == "Yes":
 
 else:
     print(f'The weekend movie ticket price is {children_ticket + weekend_price}')
+
+#Method 2:
+#Define a function
+def cinema(enter_your_age, is_weekend):
+    adult_ticket = 12
+    children_ticket = 8
+    weekend_price = 2
+
+    #Identify the person age and weekend status
+    if enter_your_age >= 18 and is_weekend == "No":
+        return f'It is a weekday and Adult movie ticket price is {adult_ticket}'
+
+    elif enter_your_age < 18 and is_weekend == "No":
+        return f'It is a weekday and Children movie ticket price is {children_ticket}'
+
+    elif enter_your_age >= 18 and is_weekend == "Yes":
+        total_price = adult_ticket + weekend_price
+        print(f'The weekend movie ticket price is {total_price}')
+
+    else:
+        return f'The weekend movie ticket price is {children_ticket + weekend_price}'
+
+#User Input
+enter_your_age = int(input("How old are you: "))
+is_weekend = input("Yes/No: ").strip().title()
+
+#Call the function
+print(cinema(enter_your_age,is_weekend))
