@@ -1,0 +1,91 @@
+Assignment Questions:
+
+Question 1: Ask the user for their name and favourite colour, then print:
+Hello [name], your favourite colour is [colour] ! (Use f-string)
+
+Question 2: Prompt for a number. Print whether it's:
+- Positive
+- Negative
+- Zero
+
+Question 3: Write a program to calculate a customer's total bill based on: 
+- Quantity
+- Price
+- Print the result using f-string.
+
+Question 4: Prompt the user to enter their score and:
+print grade A (90-100), B (80-89), C (70-79), F (below 70)
+
+Question 5: Write a Python program that calculates the area of a circle based on the radius entered by the user.
+Sample Output :
+r = 1.1
+Area = 3.8013271108436504
+
+Question 6: Write a Python program that computes the greatest common divisor (GCD) of
+two positive integers.
+
+Question 7: Write a Python program to find the least common multiple (LCM) of two positive 
+integers. enter by the user from the terminal.
+
+Question 8: Write a Python program to compute the future value of a specified principal 
+amount, rate of interest, and number of years. (calculate simple interest based on 
+user input)
+
+Question 9: Write a Python program to parse a string to float or integer.
+
+Question 10: Write a Python program to convert height (in feet and inches) to centimeters.
+
+Question 11:  Write a Python program to calculate the hypotenuse of a right angled triangle.
+
+Question 12: Write a Python program to check the validity of passwords input by users.
+Validation:
+At least 1 letter between [a-z] and 1 letter between [A-Z].
+At least 1 number between [0-9].
+At least 1 character from [$#@].
+Minimum length 6 characters.
+Maximum length 16 characters.
+
+Question 13: Write a Python program to check if a triangle is equilateral, isosceles or scalene.  
+Note : 
+An equilateral triangle is a triangle in which all three sides are equal. 
+A scalene triangle is a triangle that has three unequal sides. 
+An isosceles triangle is a triangle with (at least) two equal sides.
+
+Question 14: Write a Python program that reads two integers representing a month and 
+day and prints the season for that month and day. 
+Expected Output: 
+Input the month (e.g. January, February etc.): july                      
+Input the day: 31                                                        
+Season is harmattan
+
+Question 15: Write a program that asks for the user's name and their favorite color. Then, 
+use string interpolation to create a personalized greeting,
+
+Question 16: A shop offers a 10% discount if the total bill is over $100. Write a program 
+that asks for the total bill amount and prints the final amount to be paid after the 
+discount, if applicable.
+
+Question 17:  Write a program that takes three numbers as input and prints the largest one using if-elif-else.
+
+Question 18: Create a simple login system. Define a username and password in your 
+code. Ask the user to enter their username and password. If they match the 
+predefined credentials, print "Login successful." Otherwise, print "Invalid 
+credentials."
+
+Question 19: Write a program to determine the price of a movie ticket. 
+The base price is $12 for adults (age 18 and over) and $8 for children. 
+If it's a weekend, add $2 to the price. Ask the user for their age and if it is a weekend 
+(e.g., they can enter 'yes' or 'no').
+
+Question 20: Simulate a simple ATM. Initialize a balance, say $1000. 
+Ask the user what they want to do: 'withdraw', 'deposit', or 'check balance'. 
+If they choose 'withdraw', ask for the amount and subtract it from the balance, 
+but only if they have enough funds. If they choose 'deposit', ask for the amount and add it to 
+the balance. If they choose 'check balance', display the current balance. 
+Handle invalid input gracefully.
+
+Question 21: Adventure Game Introduction: Create a very simple text-based adventure 
+game. Start with a scenario, e.g., "You are at a crossroads. Do you want to go 'left' or 'right'?" 
+Based on the user's choice, present another choice. For example, if they go 'left', they might find 
+a 'cave' or a 'river'. Use nested if statements to create a small, branching story with at least two 
+levels of choices.
