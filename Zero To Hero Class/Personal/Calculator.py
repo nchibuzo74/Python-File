@@ -11,8 +11,11 @@ def calculator():
     print("Available operations: Addition, Subtraction, Multiplication, Division")
     
     # Accepting user input for the action type
+    #Stripping input to avoid leading/trailing spaces and converting to title case for consistency
     action_type = input("What do you intend to do?: ").strip().title()
     
+    # Validating the action type
+    #try-except block to handle non-integer inputs
     try:
         first_number = int(input("Enter the first number: "))
         second_number = int(input("Enter the second number: "))
@@ -22,12 +25,16 @@ def calculator():
     # Performing the action based on user input
     if action_type == "Addition":
         return Add_Function(first_number, second_number)
+
     elif action_type == "Subtraction":
         return Subt_Function(first_number, second_number)
+
     elif action_type == "Multiplication":
         return Mult_Function(first_number, second_number)
+
     elif action_type == "Division":
         return Div_Function(first_number, second_number)
+        
     else:
         return "Invalid operation selected"
 
