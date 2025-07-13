@@ -9,6 +9,27 @@
 def calculator():
     print("Welcome to Simple Calculator!")
     print("Available operations: Addition, Subtraction, Multiplication, Division")
+    
+    # Accepting user input for the action type
+    action_type = input("What do you intend to do?: ").strip().title()
+    
+    try:
+        first_number = int(input("Enter the first number: "))
+        second_number = int(input("Enter the second number: "))
+    except ValueError:
+        return "Error: Please enter valid integers!"
+
+    # Performing the action based on user input
+    if action_type == "Addition":
+        return Add_Function(first_number, second_number)
+    elif action_type == "Subtraction":
+        return Subt_Function(first_number, second_number)
+    elif action_type == "Multiplication":
+        return Mult_Function(first_number, second_number)
+    elif action_type == "Division":
+        return Div_Function(first_number, second_number)
+    else:
+        return "Invalid operation selected"
 
 def Add_Function(first_number, second_number):
     result_add = first_number + second_number
@@ -23,37 +44,10 @@ def Mult_Function(first_number, second_number):
     return f'Multiplication of the two numbers is {result_mult}'
 
 def Div_Function(first_number, second_number):
-    if first_number >= 0 and second_number > 0:
-        result_div = first_number / second_number
-        return f'Division of the two numbers is {result_div}'
+    if second_number == 0:  # Only need to check for division by zero
+        return 'Error: Cannot divide by zero!'
+    result_div = first_number / second_number
+    return f'Division of the two numbers is {result_div}'
 
-    else:
-        return f'Error: Try again'
-
-
-#Welcome message
+# Run the calculator
 print(calculator())
-
-#Accepting user input for the action type
-#Using strip() to remove any leading or trailing spaces and title() to capitalize the first letter
-action_type = input("What do you intend to do?: ").strip().title()
-
-first_number = int(input("Enter the first number: "))
-second_number = int(input("Enter the second number: "))
-
-#Performing the action based on user input
-#Using if-elif-else statements to determine which function to call
-if action_type == "Addition":
-    print(Add_Function(first_number, second_number))
-
-elif action_type == "Subtraction":
-    print(Subt_Function(first_number, second_number))
-
-elif action_type == "Multiplication":
-    print(Mult_Function(first_number, second_number))
-
-elif action_type == "Division":
-    print(Div_Function(first_number, second_number))
-
-else:
-    print(f'Invalid operation selected')
