@@ -30,14 +30,19 @@ def Div_Function(first_number, second_number):
     else:
         return f'Error: Try again'
 
-#Object
+
+#Welcome message
 print(calculator())
-#Strip() and Title() is use to convert the text to first letter to be capital letter while the rest small letter
+
+#Accepting user input for the action type
+#Using strip() to remove any leading or trailing spaces and title() to capitalize the first letter
 action_type = input("What do you intend to do?: ").strip().title()
 
 first_number = int(input("Enter the first number: "))
 second_number = int(input("Enter the second number: "))
 
+#Performing the action based on user input
+#Using if-elif-else statements to determine which function to call
 if action_type == "Addition":
     print(Add_Function(first_number, second_number))
 
