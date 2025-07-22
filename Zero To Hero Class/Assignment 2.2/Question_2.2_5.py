@@ -19,6 +19,6 @@ while True:
     
     if num == 0:
         break
-    total += num
+    total = total + num
 
 print(f"The sum is: {total}")
