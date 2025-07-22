@@ -9,7 +9,7 @@ def add_movie(watchlist, name, *args, **kwargs):
     movie_id = max([movie["id"] for movie in watchlist], default=0) + 1
     new_movie = {
         "id": movie_id, 
-        "name": name.strip(), 
+        "name": name.strip().title(), 
         "watched": False
     }
     return watchlist + [new_movie]
@@ -73,7 +73,7 @@ while True:
     choice = input("Enter choice (1-7): ")
     
     if choice == "1":
-        name = input("Enter movie name: ")
+        name = input("Enter movie name: ").strip().trip
         watchlist = add_movie(watchlist, name)
         save_watchlist(watchlist)
         print("Movie added!")
