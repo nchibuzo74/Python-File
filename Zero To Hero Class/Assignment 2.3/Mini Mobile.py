@@ -19,11 +19,10 @@ Bonus Points if:
 
 #Solution to the mini mobile app with superhero features
 #Thought process:
-#1. Create a simple menu-driven program that allows users to recharge, share airtime,
-# share data, and handle invalid inputs gracefully.
-#Create a dictionary to store user balances for airtime and data.
-#2. Use functions to handle each feature (recharge, share airtime, share data, check balance).
-#3. Implement input validation to ensure users enter valid amounts and phone numbers.
+#- Create a simple menu-driven program that allows users to recharge, share airtime, share data, and handle invalid inputs gracefully.
+#- Create a dictionary to store user balances for airtime and data.
+#- Use functions to handle each feature (recharge, share airtime, share data, check balance).
+#- Implement input validation to ensure users enter valid amounts and phone numbers.
 
 import time
 
