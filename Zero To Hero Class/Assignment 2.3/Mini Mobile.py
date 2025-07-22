@@ -20,14 +20,16 @@ Bonus Points if:
 #Solution to the mini mobile app with superhero features
 #Thought process:
 #1. Create a simple menu-driven program that allows users to recharge, share airtime,
-#   share data, and handle invalid inputs gracefully.
+# share data, and handle invalid inputs gracefully.
+#Create a dictionary to store user balances for airtime and data.
+#2. Use functions to handle each feature (recharge, share airtime, share data, check balance).
+#3. Implement input validation to ensure users enter valid amounts and phone numbers.
 
 import time
 
-# Superhero-themed mobile app
 def superhero_mobile_app():
     balance = {"airtime": 0, "data": 0}  # Default balance
-    networks = ["MTN", "Glo", "Airtel", "9mobile"]
+    networks = ["MTN", "Glo", "Airtel", "9Mobile"]
     
     print("\n🦸 Welcome to **Superhero Mobile App**! 🦸")
     print("----------------------------------------")
@@ -42,29 +44,45 @@ def superhero_mobile_app():
         
         choice = input("\nChoose your superpower (1-5): ")
         
-        # 1. Recharge Airtime
+        # 1. Recharge Airtime (Fully Fixed Network Selection)
         if choice == "1":
             print("\n⚡ Recharge Airtime ⚡")
             print("Available Networks:", ", ".join(networks))
             
-            network = input("Choose network: ").strip().title()
-            if network not in networks:
-                print("🚨 Invalid network! Try again.")
-                continue
+            # Network input handling with complete normalization
+            network_map = {
+                "mtn": "MTN",
+                "glo": "Glo",
+                "airtel": "Airtel",
+                "9mobile": "9Mobile",
+                "etisalat": "9Mobile"
+            }
             
-            #Handles the recharge amount and checks for valid input
-            try:
-                amount = float(input("Enter amount (₦): "))
-                if amount <= 0:
-                    print("🚨 Amount must be positive!")
-                elif amount > 5_000_000:
-                    print("😅 Whoa! Even superheroes have limits. Try a smaller amount.")
-                else:
-                    balance["airtime"] += amount
-                    print(f"\n✅ Success! ₦{amount:,.2f} added to {network}.")
-                    print("💸 You just recharged like a boss!")
-            except ValueError:
-                print("🚨 Invalid amount! Enter numbers only.")
+            while True:
+                user_input = input("Choose network: ").strip().lower()
+                # Normalize user input to match network names
+                network = network_map.get(user_input)
+                
+                if network:
+                    break
+                print("🚨 Invalid network! Choose from MTN, Glo, Airtel, or 9Mobile.")
+            
+            # Amount handling
+            while True:
+                amount_input = input("Enter amount (₦): ")
+                try:
+                    amount = float(amount_input)
+                    if amount <= 0:
+                        print("🚨 Amount must be positive!")
+                    elif amount > 5_000_000:
+                        print("😅 Whoa! Even superheroes have limits. Try a smaller amount.")
+                    else:
+                        balance["airtime"] += amount
+                        print(f"\n✅ Success! ₦{amount:,.2f} added to {network}.")
+                        print("💸 You just recharged like a boss!")
+                        break
+                except ValueError:
+                    print("🚨 Invalid amount! Enter numbers only.")
         
         # 2. Share Airtime
         elif choice == "2":
@@ -73,22 +91,25 @@ def superhero_mobile_app():
                 print("😢 Oops! Your airtime balance is ₦0. Recharge first!")
                 continue
             
-            try:
-                amount = float(input("Enter amount to share (₦): "))
-                if amount <= 0:
-                    print("🚨 Amount must be positive!")
-                elif amount > balance["airtime"]:
-                    print(f"🚨 Insufficient balance! (Current: ₦{balance['airtime']:,.2f})")
-                else:
-                    recipient = input("Enter recipient's number: ").strip()
-                    if len(recipient) != 11 or not recipient.isdigit():
-                        print("🚨 Invalid phone number! Use 11 digits (e.g., 08012345678).")
+            while True:
+                try:
+                    amount = float(input("Enter amount to share (₦): "))
+                    if amount <= 0:
+                        print("🚨 Amount must be positive!")
+                    elif amount > balance["airtime"]:
+                        print(f"🚨 Insufficient balance! (Current: ₦{balance['airtime']:,.2f})")
                     else:
-                        balance["airtime"] -= amount
-                        print(f"\n✅ Sent ₦{amount:,.2f} to {recipient}!")
-                        print("🦸 Superhero move! You saved their day!")
-            except ValueError:
-                print("🚨 Invalid amount! Enter numbers only.")
+                        while True:
+                            recipient = input("Enter recipient's number: ").strip()
+                            if len(recipient) == 11 and recipient.isdigit():
+                                balance["airtime"] -= amount
+                                print(f"\n✅ Sent ₦{amount:,.2f} to {recipient}!")
+                                print("🦸 Superhero move! You saved their day!")
+                                break
+                            print("🚨 Invalid phone number! Use 11 digits (e.g., 08012345678).")
+                        break
+                except ValueError:
+                    print("🚨 Invalid amount! Enter numbers only.")
         
         # 3. Share Data
         elif choice == "3":
@@ -97,23 +118,25 @@ def superhero_mobile_app():
                 print("😢 Oops! No data to share. Buy data first!")
                 continue
             
-            #Handles the data sharing amount and checks for valid input
-            try:
-                mb = float(input("Enter MB to share: "))
-                if mb <= 0:
-                    print("🚨 MB must be positive!")
-                elif mb > balance["data"]:
-                    print(f"🚨 Insufficient data! (Current: {balance['data']} MB)")
-                else:
-                    recipient = input("Enter recipient's number: ").strip()
-                    if len(recipient) != 11 or not recipient.isdigit():
-                        print("🚨 Invalid phone number! Use 11 digits.")
+            while True:
+                try:
+                    mb = float(input("Enter MB to share: "))
+                    if mb <= 0:
+                        print("🚨 MB must be positive!")
+                    elif mb > balance["data"]:
+                        print(f"🚨 Insufficient data! (Current: {balance['data']} MB)")
                     else:
-                        balance["data"] -= mb
-                        print(f"\n✅ Sent {mb} MB to {recipient}!")
-                        print("🌐 Data shared like a true hero!")
-            except ValueError:
-                print("🚨 Invalid input! Enter numbers only.")
+                        while True:
+                            recipient = input("Enter recipient's number: ").strip()
+                            if len(recipient) == 11 and recipient.isdigit():
+                                balance["data"] -= mb
+                                print(f"\n✅ Sent {mb} MB to {recipient}!")
+                                print("🌐 Data shared like a true hero!")
+                                break
+                            print("🚨 Invalid phone number! Use 11 digits.")
+                        break
+                except ValueError:
+                    print("🚨 Invalid input! Enter numbers only.")
         
         # 4. Check Balance
         elif choice == "4":
