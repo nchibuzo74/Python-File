@@ -1,0 +1,15 @@
+Create a Python program that simulates a mini mobile app with the following superhero features:
+
+        Recharge your phone number with any network (MTN, Glo, Airtel, 9mobile – yes, no discrimination here 😄).
+
+        Share airtime with friends, family, or that one cousin who always asks at the worst time.
+
+        Share mobile data too—because sharing is caring, right?
+
+Bonus Points if:
+
+    Your app has menus or prompts that feel like a real user interface.
+
+    You handle “invalid input” like a pro (even if someone tries to recharge with ₦5 million 😅).
+
+    You add a bit of fun to your messages/output (think: "You just recharged like a boss!" 💸)
