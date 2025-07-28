@@ -60,7 +60,7 @@ Self-assessment opportunities
 ## 📚 Resources
 Python Official Documentation
 
-Black Python Learning Materials (Add link if available)
+Black Python Learning Materials
 
 W3Schools Python Tutorial
 
