@@ -13,6 +13,7 @@ This repository contains my learning journey through the **"Zero To Hero" Python
 
 🔗 **Repository Link:** [https://github.com/nchibuzo74/Python-File/tree/main/Zero%20To%20Hero%20Class](https://github.com/nchibuzo74/Python-File/tree/main/Zero%20To%20Hero%20Class)
 
+```markdown
 ## 📂 Repository Structure
 Zero To Hero Class/
 ├── Class 1/ # Introduction to Python
@@ -68,6 +69,5 @@ W3Schools Python Tutorial
 For questions or collaboration:
 
 GitHub: nchibuzo74
-
 Email: nwankwochibuzosamuel24@gmail.com
 
