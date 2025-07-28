@@ -13,8 +13,9 @@ This repository contains my learning journey through the **"Zero To Hero" Python
 
 🔗 **Repository Link:** [https://github.com/nchibuzo74/Python-File/tree/main/Zero%20To%20Hero%20Class](https://github.com/nchibuzo74/Python-File/tree/main/Zero%20To%20Hero%20Class)
 
-```markdown
+
 ## 📂 Repository Structure
+```markdown
 Zero To Hero Class/
 ├── Class 1/ # Introduction to Python
 │ ├── basics.py # Basic syntax exercises
@@ -29,7 +30,7 @@ Zero To Hero Class/
 ├── ... # More classes to come
 ├── Projects/ # Cumulative projects
 └── Resources/ # Additional learning materials
-
+```
 
 ## 🎯 Learning Objectives
 By completing this course, I aim to:
