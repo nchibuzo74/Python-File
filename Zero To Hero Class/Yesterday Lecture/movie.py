@@ -73,7 +73,7 @@ while True:
     choice = input("Enter choice (1-7): ")
     
     if choice == "1":
-        name = input("Enter movie name: ").strip().trip
+        name = input("Enter movie name: ").strip().title()
         watchlist = add_movie(watchlist, name)
         save_watchlist(watchlist)
         print("Movie added!")
