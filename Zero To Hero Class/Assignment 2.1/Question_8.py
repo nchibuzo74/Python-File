@@ -10,11 +10,21 @@ Thought Process:
 - The formula for simple interest is (P * R * T) / 100
 - Create a variable accepting user input - principal, rate and time
 - Create a varaible to compute the calculation
+- Wrap the logic using error handling mechanism
 """
-Principal = int(input("Enter the Principal amount: "))
-Rate = int(input("Enter the Rate (%): "))
-Time = int(input("Enter the Time (in years): "))
 
-SI = (Principal * Rate * Time) / 100
+#Handle Error
+try:
+    Principal = int(input("Enter the Principal amount: "))
+    Rate = int(input("Enter the Rate (%): "))
+    Time = int(input("Enter the Time (in years): "))
+    
+    SI = (Principal * Rate * Time) / 100
+    
+    print(f'The Simple Interest is {SI}')
 
-print(f'The Simple Interest is {SI}')
+except ValueError:
+    print(f'Please enter a number correctly. ')
+
+finally:
+    print(f'Thanks for complying. ')
