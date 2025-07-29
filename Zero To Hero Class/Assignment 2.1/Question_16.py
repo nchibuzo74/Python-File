@@ -9,14 +9,20 @@ discount, if applicable.
 #1. Create a variable to accept user input
 #2. create a mechanism to check if the total bill exceed 100
 #3. If exceed 100, multiply the discount by total bill, else total bill
+# 4. Wrap the logic using error handling mechanism
 
-enter_amount = int(input("enter total bill amount: "))
-discount = 0.1
+#Handle Error
+try:
+    enter_amount = int(input("enter total bill amount: "))
+    discount = 0.1
+    
+    if enter_amount > 100:
+        final_amount = enter_amount - (discount * enter_amount)
+        
+        print(f'The total bill amount is {final_amount:.2f}')
+        
+    else:
+        print(f'The total bill amount is {enter_amount:.2f}')
 
-if enter_amount > 100:
-    final_amount = enter_amount - (discount * enter_amount)
-
-    print(f'The total bill amount is {final_amount:.2f}')
-
-else:
-    print(f'The total bill amount is {enter_amount:.2f}')
+except ValueError:
+    print(f'Please enter a number correctly. ')

@@ -4,8 +4,14 @@
 #Thought Process: 
 # Create a variable to accept user input
 # Create a mechanism to check if the input is an integer or float
+# Wrap the logic using error handling mechanism
 
-enter_value = float(input("Enter a number: "))
+#Handle Error
+try:
+    enter_value = float(input("Enter a number: "))
+    
+    print(enter_value) #This will automatically convert the input to float if it contains a decimal point.
+    print(type(enter_value)) #This will show the datatype of the variable.
 
-print(enter_value) #This will automatically convert the input to float if it contains a decimal point.
-print(type(enter_value)) #This will show the datatype of the variable.
+except ValueError:
+    print(f'Please a number correctly. ')

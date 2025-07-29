@@ -12,6 +12,7 @@ Season is harmattan
 # Create a function to determine the season based on the month and day
 # Create a variable to accept user input for the month and day
 # Create a mechanism to check the season based on the month and day
+# Wrap the logic using error handling mechanism
 
 def get_season(month, day):
     if month in ["April", "May", "June", "July", "August", "September"]:
@@ -23,9 +24,14 @@ def get_season(month, day):
     else:
         return 'Invalid month'
 
-# Input and execution (outside the function!)
-month = input("Input the month (e.g. January, February etc.): ").strip().title()  # .title() for consistency
-day = int(input("Input the day: "))
+#Handle Error
+try:
+    # Input and execution (outside the function!)
+    month = input("Input the month (e.g. January, February etc.): ").strip().title()  # .title() for consistency
+    day = int(input("Input the day: "))
+    
+    season = get_season(month, day)
+    print(f'Season is {season}')
 
-season = get_season(month, day)
-print(f'Season is {season}')
+except TypeError:
+    print(f'Please enter a month correctly. ')

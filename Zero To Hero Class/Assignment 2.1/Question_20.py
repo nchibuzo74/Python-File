@@ -13,31 +13,35 @@ Handle invalid input gracefully.
 #Create a variable to store the initialize balance
 #Create a variable to accept user input of intended action
 #Create a mechanism that check the user action type and action by the action type inputted
+# Wrap the logic using error handling mechanism
 
 #Method 1:
-def simple_atm(action_type, amount_to_witdraw, deposited_amount):
+# Global balance variable to persist across function calls
+balance = 1000
+
+def simple_atm(action_type, amount=0):
+    global balance
     action_type = action_type.strip().title()
-    initialize_balance = 1000
     
     if action_type == "Withdraw":
-        if amount_to_witdraw > 0:
-            if amount_to_witdraw <= initialize_balance:
-                new_balance = initialize_balance - amount_to_witdraw
-                return f'Your balance is {new_balance}'
+        if amount > 0:
+            if amount <= balance:
+                balance = balance - amount
+                return f'Withdrawal successful. Your balance is ${balance}'
             else:
                 return 'Insufficient funds'
         else:
             return 'Withdrawal amount must be positive'
     
     elif action_type == "Deposit":
-        if deposited_amount > 0:
-            new_balance = initialize_balance + deposited_amount
-            return f'Your balance is {new_balance}'
+        if amount > 0:
+            balance = balance + amount
+            return f'Deposit successful. Your balance is ${balance}'
         else:
             return 'Deposit amount must be positive'
     
     elif action_type == "Check Balance":
-        return f'Your balance is {initialize_balance}'
+        return f'Your balance is ${balance}'
     
     else:
         return 'Invalid action type'
@@ -45,19 +49,33 @@ def simple_atm(action_type, amount_to_witdraw, deposited_amount):
 # User input
 action_type = input("What do you want to do? (Withdraw/Deposit/Check Balance): ").strip().title()
 
-# Only request relevant amounts
-if action_type == "Withdraw":
-    amount_to_witdraw = int(input("Enter amount to withdraw: "))
-    deposited_amount = 0  # Not used for withdrawal
-elif action_type == "Deposit":
-    deposited_amount = int(input("Enter the amount to deposit: "))
-    amount_to_witdraw = 0  # Not used for deposit
-else:  # Check Balance
-    amount_to_witdraw = 0
-    deposited_amount = 0
+# Handle Error
+try:
+    if action_type == "Withdraw":
+        amount = int(input("Enter amount to withdraw: "))
+        result = simple_atm(action_type, amount)
+        print(result)
+        
+    elif action_type == "Deposit":
+        amount = int(input("Enter the amount to deposit: "))
+        result = simple_atm(action_type, amount)
+        print(result)
+        
+    elif action_type == "Check Balance":
+        result = simple_atm(action_type)
+        print(result)
+        
+    else:
+        print('Invalid action type')
 
-print(simple_atm(action_type, amount_to_witdraw, deposited_amount))
+except ValueError:
+    print('Please enter a valid amount.')
 
+finally:
+    print('Thank you for using the ATM service!')
+
+
+################################################################################################################################################
 #Method 2:
 # Initialize balance
 initialize_balance = 1000
@@ -65,31 +83,39 @@ initialize_balance = 1000
 # Get user input
 action_type = input("What do you want to do? (Withdraw/Deposit/Check Balance): ").strip().title()
 
-# Process withdrawal
-if action_type == "Withdraw":
-    amount_to_withdraw = int(input("Enter amount to withdraw: "))
-    if amount_to_withdraw > 0:
-        if amount_to_withdraw <= initialize_balance:
-            initialize_balance = initialize_balance - amount_to_withdraw
-            print(f'Your balance is {initialize_balance}')
+# Handle Error
+try:
+    # Process withdrawal
+    if action_type == "Withdraw":
+        amount_to_withdraw = int(input("Enter amount to withdraw: "))
+        if amount_to_withdraw > 0:
+            if amount_to_withdraw <= initialize_balance:
+                initialize_balance = initialize_balance - amount_to_withdraw
+                print(f'Withdrawal successful. Your balance is ${initialize_balance}')
+            else:
+                print('Insufficient funds')
         else:
-            print('Insufficient funds')
+            print('Withdrawal amount must be positive')
+            
+    # Process deposit
+    elif action_type == "Deposit":
+        deposited_amount = int(input("Enter the amount to deposit: "))
+        if deposited_amount > 0:
+            initialize_balance = initialize_balance + deposited_amount
+            print(f'Deposit successful. Your balance is ${initialize_balance}')
+        else:
+            print('Deposit amount must be positive')
+            
+    # Check balance
+    elif action_type == "Check Balance":
+        print(f'Your balance is ${initialize_balance}')
+        
+    # Invalid action
     else:
-        print('Withdrawal amount must be positive')
+        print('Invalid action type')
 
-# Process deposit
-elif action_type == "Deposit":
-    deposited_amount = int(input("Enter the amount to deposit: "))
-    if deposited_amount > 0:
-        initialize_balance = initialize_balance + deposited_amount
-        print(f'Your balance is {initialize_balance}')
-    else:
-        print('Deposit amount must be positive')
+except ValueError:
+    print('Please enter a valid amount.')
 
-# Check balance
-elif action_type == "Check Balance":
-    print(f'Your balance is {initialize_balance}')
-
-# Invalid action
-else:
-    print('Invalid action type')
+finally:
+    print('Thank you for using the ATM service!')

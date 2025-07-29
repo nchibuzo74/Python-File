@@ -13,6 +13,7 @@ Thought Process:
 - Use string methods to check for the presence of lowercase, uppercase, digits, and special characters
 - Create a variable to accept user input for the password
 - Create a mechanism to check the validity of the password based on the given conditions
+- Wrap the logic using error handling mechanism
 """
 
 def validate_password(password):
@@ -28,7 +29,16 @@ def validate_password(password):
 
 # Test the function
 password = input("Enter password: ")
-if validate_password(password):
-    print("Password is valid!")
-else:
-    print("Password is invalid!")
+
+#Handle Error
+try:
+    if validate_password(password):
+        print("Password is valid!")
+    else:
+        print("Password is invalid!")
+
+except TypeError:
+    print(f'Please enter an valid password. ')
+
+finally:
+    print(f'Thanks for complying. ')

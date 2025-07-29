@@ -12,6 +12,7 @@ Thought Process:
 - Use string methods to check for the presence of lowercase, uppercase, digits, and special characters
 - Create a variable to accept user input for the password
 - Create a mechanism to check the validity of the password based on the given conditions
+- Wrap the logic using error handling mechanism
 """
 def validate_credentials(username, password):
     # Username validation
@@ -34,8 +35,17 @@ def validate_credentials(username, password):
 if __name__ == "__main__":
     username = input("Enter username: ")
     password = input("Enter password: ")
-    
+
+#Handle Error
+try:
     if validate_credentials(username, password):
-        print(f'CLogin successful')
+        print(f'Login successful')
     else:
         print(f'Invalid credentials')
+
+except TypeError:
+    print(f'Please a correct username and password. ')
+
+#Greetings
+finally:
+    print(f'Thanks for complying. ')
