@@ -9,19 +9,32 @@ Thought Process:
 - Create a variable taking user input
 - Create a variable to find the greater number between two numbers
 - Check multiples if greater number is divisible by both numbers.
+- Wrap the logic using error handling mechanism
 """
-# Take input from the user
-number1 = int(input("Enter first number: "))
-number2 = int(input("Enter second number: "))
 
-# Find the greater number
-greater_number = max(number1, number2)
+#Handle Error
+# Handle Error
+try:
+    # Take input from the user
+    number1 = int(input("Enter first number: "))
+    number2 = int(input("Enter second number: "))
+    
+    # Find the greater number
+    greater_number = max(number1, number2)
+    
+    # Keep checking multiples of the greater number until divisible by both
+    while True:
+        if greater_number % number1 == 0 and greater_number % number2 == 0:
+            lcm = greater_number
+            break
+        greater_number += 1
+    
+    # Print the result after finding LCM
+    print(f'The LCM of {number1} and {number2} is {lcm}')
 
-# Keep checking multiples of the greater number until divisible by both
-while True:
-    if greater_number % number1 == 0 and greater_number % number2 == 0:
-        lcm = greater_number
-        break
-    greater_number += 1
+except ValueError:
+    print('Please enter a correct number.')
 
-print(f"The LCM of {number1} and {number2} is {lcm}")
+# Greetings
+finally:
+    print('Thank you for complying.')

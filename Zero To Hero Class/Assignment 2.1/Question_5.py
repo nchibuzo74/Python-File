@@ -10,9 +10,15 @@ Area = 3.8013271108436504
 Thought Process: The area of a circle is pi r square (r^2)
 - Create a variable to accept the radius inputted by the user
 - Let pie be 3.142
+- Wrap the logic using error handling mechanism
 """
-pie = 3.142
-radius = float(input("Enter the radius: "))
-area = ((pie) * (radius * radius))
+#Handle Error
+try:
+    pie = 3.142
+    radius = float(input("Enter the radius: "))
+    area = ((pie) * (radius * radius))
+    
+    print(f'The area of a circle is {area}')
 
-print(f'The area of a circle is {area}')
+except ValueError:
+    print(f'Please enter a correct value for radius. ')
