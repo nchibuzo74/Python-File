@@ -9,6 +9,7 @@ divisors other than 1 and itself.
 #Thought Process:
 #Create a function that accepts a number
 #Check if the number is less than 2, if so, it is not prime
+#Wrap the logic using error handling mechanism
 
 def is_prime(number):
     if number < 2:
@@ -18,10 +19,20 @@ def is_prime(number):
             return False
     return True
 
-# Get user input
-number = int(input("Enter a number: "))
-# Check if the number is prime
-if is_prime(number):
-    print(f"{number} is a prime number.")
-else:
-    print(f"{number} is not a prime number.")
+# Handle Error
+try:
+    # Get user input
+    number = int(input("Enter a number: "))
+    
+    # Check if the number is prime
+    if is_prime(number):
+        print(f"{number} is a prime number.")
+    else:
+        print(f"{number} is not a prime number.")
+        
+except ValueError:
+    print("Please enter a valid integer.")
+
+# Finally block to ensure the program ends gracefully
+finally:
+    print("Thank you for using the prime number checker!")

@@ -5,9 +5,15 @@
 #Create a variable that stores the number
 #Use a for statement to decrease the numbers
 #Print the numbers
+#Wrap the logic using error handling mechanism
 
-number = 10
+#Handle Error
+try:
+    number = 10
+    
+    # Lower half (decreasing stars)
+    for num in range(number, 0, -1):
+        print(num)
 
-# Lower half (decreasing stars)
-for num in range(number, 0, -1):
-    print(num)
+except ValueError:
+    print(f'Please enter a number correctly. ')

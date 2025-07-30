@@ -6,6 +6,7 @@
 #Create a variable to accept users input
 #Create a mechanism to identity the number from the user input if it's zero or not
 #If enter zero, sum up all the numbers they entered before excluding zero
+#Wrap the logic using error handling mechanism
 
 total = 0
 

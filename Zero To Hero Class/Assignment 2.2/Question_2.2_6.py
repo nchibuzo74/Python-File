@@ -6,8 +6,13 @@ Note : Use 'continue' statement.
 #Solution:
 #Thought Process:
 #Create a loop to iterate through the numbers from 0 to 6
+#Wrap the logic using error handling mechanism
 
-for number in range(7):
-    if number == 3 or number == 6:
-        continue #Skip the 3 and 6
-    print(f'The numbers are: {number}')
+#Handle Error
+try:
+    for number in range(7):
+        if number == 3 or number == 6:
+            continue #Skip the 3 and 6
+        print(f'The numbers are: {number}')
+except ValueError:
+    print(f'Please enter a number correctly. ')

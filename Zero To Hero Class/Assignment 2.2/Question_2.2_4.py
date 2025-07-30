@@ -5,9 +5,18 @@
 #Use a while statement to loop the process
 #Use an if statement to identify the odd numbers or not
 #Print the odd numbers
+#Wrap the logic using error handling mechanism
 
-number = 1  # Start with the first odd number
-while number <= 15:  # Continue until we reach 15
-    if number % 2 != 0:  # Check if the number is odd
-        print(number)
-    number = number + 1  # Move to the next number
+#Handle Error
+try:
+    number = 1  # Start with the first odd number
+    while number <= 15:  # Continue until we reach 15
+        if number % 2 != 0:  # Check if the number is odd
+            print(number)
+        number = number + 1  # Move to the next number (moved outside the if block)
+
+except ValueError:
+    print('Please enter a number correctly.')
+
+if __name__ == "__main__":
+    pass  # You can add code here that should run when the script is executed directly
