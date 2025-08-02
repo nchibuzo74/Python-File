@@ -45,9 +45,9 @@ By completing this course, I aim to:
 |-------|----------------|--------|-----------------|
 | 1 | Variables, Data Types, I/O | ✅ Complete | MM/DD/YYYY |
 | 2 | Conditionals, Loops | ✅ Complete | MM/DD/YYYY |
-| 3 | Functions, Scope | ✅ Complete | - |
-| 4 | OOP Concepts | ✅ Complete | - |
-| 5 | File Handling | ✅ Complete | - |
+| 3 | Functions, Scope | ✅ Complete | MM/DD/YYYY |
+| 4 | OOP Concepts | ✅ Complete | MM/DD/YYYY |
+| 5 | File Handling | ✅ Complete | MM/DD/YYYY |
 | 6 | Built-in Method/Module | 🟡 In Progress | - |
 | 7 | Etc | ❌ Pending | - |
 
