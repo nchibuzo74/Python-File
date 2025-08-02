@@ -73,3 +73,4 @@ GitHub: nchibuzo74
 
 Email: nwankwochibuzosamuel24@gmail.com
 
+LinkedIn: https://www.linkedin.com/in/chibuzo-nwankwo-baa756133
